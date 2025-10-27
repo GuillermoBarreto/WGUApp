@@ -10,9 +10,22 @@
 		B6FB0EF62EA5D0F40048F1AA /* WGUApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WGUApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B6FB0F052EA5D1380048F1AA /* Exceptions for "WGUApp" folder in "WGUApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Untitled.swift,
+			);
+			target = B6FB0EF52EA5D0F40048F1AA /* WGUApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B6FB0EF82EA5D0F40048F1AA /* WGUApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B6FB0F052EA5D1380048F1AA /* Exceptions for "WGUApp" folder in "WGUApp" target */,
+			);
 			path = WGUApp;
 			sourceTree = "<group>";
 		};
