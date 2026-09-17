@@ -9,11 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
+        VStack(spacing: 16) {
+            Image(systemName: "graduationcap.fill")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+                .accessibilityHidden(true)
+            Text("Welcome to WGUApp")
+                .font(.title)
+                .fontWeight(.bold)
+                .accessibilityAddTraits(.isHeader)
+            Text("Your place to organize courses, track progress, and plan study goals.")
+                .foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
         }
         .padding()
     }
