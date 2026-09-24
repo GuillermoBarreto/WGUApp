@@ -23,6 +23,9 @@ struct ContentView: View {
                 .multilineTextAlignment(.center)
         }
         .padding()
+        // Read the welcome card as a single VoiceOver element instead of three.
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Welcome to WGUApp. Your place to organize courses, track progress, and plan study goals.")
     }
 }
 
