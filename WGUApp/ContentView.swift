@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    /// Shared by the subtitle and the VoiceOver label so the two can't drift apart.
+    private let welcomeMessage = "Your place to organize courses, track progress, and plan study goals."
+
     var body: some View {
         VStack(spacing: 16) {
             Image(systemName: "graduationcap.fill")
@@ -19,14 +22,14 @@ struct ContentView: View {
                 .fontWeight(.bold)
                 .minimumScaleFactor(0.8)
                 .accessibilityAddTraits(.isHeader)
-            Text("Your place to organize courses, track progress, and plan study goals.")
+            Text(welcomeMessage)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
         }
         .padding()
         // Read the welcome card as a single VoiceOver element instead of three.
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("Welcome to WGUApp. Your place to organize courses, track progress, and plan study goals.")
+        .accessibilityLabel("Welcome to WGUApp. \(welcomeMessage)")
     }
 }
 
