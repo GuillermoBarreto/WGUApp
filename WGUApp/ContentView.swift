@@ -17,6 +17,7 @@ struct ContentView: View {
             Text("Welcome to WGUApp")
                 .font(.title)
                 .fontWeight(.bold)
+                .minimumScaleFactor(0.8)
                 .accessibilityAddTraits(.isHeader)
             Text("Your place to organize courses, track progress, and plan study goals.")
                 .foregroundStyle(.secondary)
