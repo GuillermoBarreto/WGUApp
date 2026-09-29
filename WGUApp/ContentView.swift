@@ -27,6 +27,8 @@ struct ContentView: View {
                 .multilineTextAlignment(.center)
         }
         .padding()
+        // Fill the available space so the welcome card stays centered on any screen size.
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         // Read the welcome card as a single VoiceOver element instead of three.
         .accessibilityElement(children: .combine)
         .accessibilityLabel("Welcome to WGUApp. \(welcomeMessage)")
