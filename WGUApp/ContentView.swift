@@ -20,6 +20,9 @@ struct ContentView: View {
             Text("Welcome to WGUApp")
                 .font(.title)
                 .fontWeight(.bold)
+                // Keep the title on one line so minimumScaleFactor can shrink it
+                // instead of wrapping on narrow screens.
+                .lineLimit(1)
                 .minimumScaleFactor(0.8)
                 .accessibilityAddTraits(.isHeader)
             Text(welcomeMessage)
