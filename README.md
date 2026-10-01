@@ -13,3 +13,4 @@ Working every day to release for the students at WGU.
 - 2025-11-03: Started building the app to run on a physical iPhone.
 - 2026-09-26: Made the welcome card a single VoiceOver element with a full label.
 - 2026-09-28: Centered the welcome card on all screen sizes and added getting-started instructions.
+- 2026-09-30: Kept the welcome title on one line on narrow screens so it scales down instead of wrapping.
