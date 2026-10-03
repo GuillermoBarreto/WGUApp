@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// The welcome screen: a centered card introducing WGUApp and its purpose.
 struct ContentView: View {
     /// Shared by the subtitle and the VoiceOver label so the two can't drift apart.
     private let welcomeMessage = "Your place to organize courses, track progress, and plan study goals."
