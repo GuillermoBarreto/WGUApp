@@ -24,7 +24,7 @@ struct ContentView: View {
                 // Keep the title on one line so minimumScaleFactor can shrink it
                 // instead of wrapping on narrow screens.
                 .lineLimit(1)
-                .minimumScaleFactor(0.8)
+                .minimumScaleFactor(0.5)
                 .accessibilityAddTraits(.isHeader)
             Text(welcomeMessage)
                 .foregroundStyle(.secondary)
