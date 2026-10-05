@@ -62,6 +62,10 @@ struct ContentView: View {
     }
 }
 
-#Preview {
+#Preview("iPhone 16 Pro") {
+    ContentView()
+}
+
+#Preview("iPhone SE", traits: .fixedLayout(width: 375, height: 667)) {
     ContentView()
 }
