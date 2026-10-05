@@ -34,6 +34,7 @@ struct ContentView: View {
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
                     .accessibilityAddTraits(.isHeader)
+                .accessibilityIdentifier("welcomeTitle")
                 Text(welcomeMessage)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -41,6 +42,7 @@ struct ContentView: View {
             // Read the welcome card as a single VoiceOver element instead of three.
             .accessibilityElement(children: .combine)
             .accessibilityLabel("Welcome to WGUApp. \(welcomeMessage)")
+            .accessibilityIdentifier("welcomeCard")
 
             VStack(alignment: .leading, spacing: 8) {
                 Text("Get started")
@@ -52,6 +54,7 @@ struct ContentView: View {
                 }
             }
             .padding(.top, 4)
+            .accessibilityIdentifier("getStartedSteps")
         }
         .padding()
         // Fill the available space so the welcome card stays centered on any screen size.
