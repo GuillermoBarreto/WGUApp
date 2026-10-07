@@ -34,7 +34,7 @@ struct ContentView: View {
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
                     .accessibilityAddTraits(.isHeader)
-                .accessibilityIdentifier("welcomeTitle")
+                    .accessibilityIdentifier("welcomeTitle")
                 Text(welcomeMessage)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
