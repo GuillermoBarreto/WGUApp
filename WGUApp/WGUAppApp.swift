@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// The app entry point: launches WGUApp into its welcome screen.
 @main
 struct WGUAppApp: App {
     var body: some Scene {
