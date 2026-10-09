@@ -69,3 +69,8 @@ struct ContentView: View {
 #Preview("iPhone SE", traits: .fixedLayout(width: 375, height: 667)) {
     ContentView()
 }
+
+// Render in dark mode to catch contrast issues with the secondary text and tinted icon.
+#Preview("Dark Mode", traits: .preferredColorScheme(.dark)) {
+    ContentView()
+}
