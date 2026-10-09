@@ -16,3 +16,4 @@ Working every day to release for the students at WGU.
 - 2026-09-30: Kept the welcome title on one line on narrow screens so it scales down instead of wrapping.
 - 2026-10-04: Added a Get started section to the welcome screen with first steps.
 - 2026-10-06: Documented the app entry point and fixed the welcome title's modifier indentation.
+- 2026-10-08: Added a Dark Mode preview of the welcome screen to catch contrast issues.
