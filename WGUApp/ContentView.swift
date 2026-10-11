@@ -20,7 +20,10 @@ struct ContentView: View {
     ]
 
     var body: some View {
-        VStack(spacing: 16) {
+        // Scrollable so the Get started section stays reachable on small
+        // screens with large Dynamic Type sizes.
+        ScrollView {
+            VStack(spacing: 16) {
             VStack(spacing: 16) {
                 Image(systemName: "graduationcap.fill")
                     .imageScale(.large)
@@ -56,9 +59,13 @@ struct ContentView: View {
             .padding(.top, 4)
             .accessibilityIdentifier("getStartedSteps")
         }
-        .padding()
-        // Fill the available space so the welcome card stays centered on any screen size.
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+            .padding()
+            // Fill the available space so the welcome card stays centered on any screen size.
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            // Keep the content vertically centered when it fits without scrolling (iOS 17+).
+            .containerRelativeFrame(.vertical, alignment: .center)
+        }
     }
 }
 
