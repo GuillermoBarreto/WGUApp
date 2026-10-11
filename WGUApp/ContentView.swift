@@ -20,7 +20,10 @@ struct ContentView: View {
     ]
 
     var body: some View {
-        VStack(spacing: 16) {
+        // Scrollable so the Get started section stays reachable on small
+        // screens with large Dynamic Type sizes.
+        ScrollView {
+            VStack(spacing: 16) {
             VStack(spacing: 16) {
                 Image(systemName: "graduationcap.fill")
                     .imageScale(.large)
@@ -29,10 +32,10 @@ struct ContentView: View {
                 Text("Welcome to WGUApp")
                     .font(.title)
                     .fontWeight(.bold)
-                    // Keep the title on one line so minimumScaleFactor can shrink it
-                    // instead of wrapping on narrow screens.
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.5)
+                    // Wrap instead of shrinking: at large Dynamic Type sizes,
+                    // minimumScaleFactor would shrink the title to 50% and make
+                    // it hard to read. Two lines stay legible everywhere.
+                    .lineLimit(2)
                     .accessibilityAddTraits(.isHeader)
                     .accessibilityIdentifier("welcomeTitle")
                 Text(welcomeMessage)
@@ -48,17 +51,22 @@ struct ContentView: View {
                 Text("Get started")
                     .font(.headline)
                     .accessibilityAddTraits(.isHeader)
-                ForEach(gettingStartedSteps, id: \.self) { step in
+                ForEach(Array(gettingStartedSteps.enumerated()), id: \.offset) { index, step in
                     Label(step, systemImage: "checkmark.circle.fill")
                         .foregroundStyle(.secondary)
+                        .accessibilityIdentifier("getStartedStep-\(index)")
                 }
             }
             .padding(.top, 4)
             .accessibilityIdentifier("getStartedSteps")
         }
-        .padding()
-        // Fill the available space so the welcome card stays centered on any screen size.
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+            .padding()
+            // Fill the available space so the welcome card stays centered on any screen size.
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            // Keep the content vertically centered when it fits without scrolling (iOS 17+).
+            .containerRelativeFrame(.vertical, alignment: .center)
+        }
     }
 }
 
