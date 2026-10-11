@@ -51,9 +51,10 @@ struct ContentView: View {
                 Text("Get started")
                     .font(.headline)
                     .accessibilityAddTraits(.isHeader)
-                ForEach(gettingStartedSteps, id: \.self) { step in
+                ForEach(Array(gettingStartedSteps.enumerated()), id: \.offset) { index, step in
                     Label(step, systemImage: "checkmark.circle.fill")
                         .foregroundStyle(.secondary)
+                        .accessibilityIdentifier("getStartedStep-\(index)")
                 }
             }
             .padding(.top, 4)
